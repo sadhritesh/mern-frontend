@@ -40,7 +40,7 @@ export default function DashProfile() {
     }
     try {
       dispatch(updateStart())
-      const response = await fetch("/api/v1/user/update-profile",{
+      const response = await fetch(`${process.env.API_BASE_URL}/api/v1/user/update-profile`,{
         method : "POST",
         body : data
       })
@@ -63,7 +63,7 @@ export default function DashProfile() {
 const handleDelete = async (e) => {
   try {
     dispatch(deleteUserStart())
-    const res = await fetch("/api/v1/user/delete-profile",{
+    const res = await fetch(`${process.env.API_BASE_URL}/api/v1/user/delete-profile`,{
       method: "DELETE"
     })
     const result = await res.json()
@@ -84,7 +84,7 @@ const handleDelete = async (e) => {
 
 const handleSignOut = async () => {
   try {
-    const response = await fetch("/api/v1/auth/signout", {
+    const response = await fetch(`${process.env.API_BASE_URL}/api/v1/auth/signout`, {
       method : "POST"
     })
     const result = await response.json()

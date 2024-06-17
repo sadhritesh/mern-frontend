@@ -7,7 +7,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch('/api/v1/post/getPosts');
+      const res = await fetch(`${process.env.API_BASE_URL}/api/v1/post/getPosts`);
       const result = await res.json();
       setPosts(result.data.posts);
     };

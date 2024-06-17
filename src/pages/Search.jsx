@@ -36,7 +36,7 @@ export default function Search() {
     
       setLoading(true);
       const searchQuery = urlParams.toString();
-      const res = await fetch(`/api/v1/post/getposts?${searchQuery}`);
+      const res = await fetch(`${process.env.API_BASE_URL}/api/v1/post/getposts?${searchQuery}`);
       const result = await res.json()
 
       if (!result.success) {
@@ -86,7 +86,7 @@ export default function Search() {
     const urlParams = new URLSearchParams(location.search);
     urlParams.set('startIndex', startIndex);
     const searchQuery = urlParams.toString();
-    const res = await fetch(`/api/v1/post/getposts?${searchQuery}`);
+    const res = await fetch(`${process.env.API_BASE_URL}/api/v1/post/getposts?${searchQuery}`);
     const result = await res.json()
 
     if (!result.success) {
