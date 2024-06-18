@@ -40,7 +40,7 @@ export default function CreatePost() {
     }
     
     try {
-      const res = await fetch(`${process.env.API_BASE_URL}/api/v1/post/create-post`, {
+      const res = await fetch(`${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/post/create-post`, {
         method: "POST",
         body : data
       }) 

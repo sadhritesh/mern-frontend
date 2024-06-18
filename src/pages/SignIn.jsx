@@ -34,7 +34,7 @@ export default function SignIn() {
     
     try {
       dispatch(signInStart())
-      const response = await fetch(`${process.env.API_BASE_URL}/api/v1/auth/signin`, {
+      const response = await fetch(`${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/auth/signin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

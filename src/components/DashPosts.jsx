@@ -18,7 +18,7 @@ export default function DashPosts() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch(`${process.env.API_BASE_URL}/api/v1/post/getposts?userId=${currentUser._id}`);
+        const res = await fetch(`${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/post/getposts?userId=${currentUser._id}`);
         const result = await res.json()
         if (!result.success) {
           throw new Error(result.message)
@@ -40,7 +40,7 @@ export default function DashPosts() {
     const startIndex = userPosts.length;
     try {
       const res = await fetch(
-        `${process.env.API_BASE_URL}/api/v1/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`
+        `${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`
       )
       const result = await res.json()
 
@@ -61,7 +61,7 @@ export default function DashPosts() {
     setShowModal(false);
     try {
       const res = await fetch(
-        `${process.env.API_BASE_URL}/api/v1/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        `${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/post/deletepost/${postIdToDelete}/${currentUser._id}`,
         {
           method: "DELETE"
         }

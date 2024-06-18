@@ -13,7 +13,7 @@ export default function DashUsers() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch(`${process.env.API_BASE_URL}/api/v1/user/getusers`);
+        const res = await fetch(`${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/user/getusers`);
         const data = await res.json();
         if (res.ok) {
           setUsers(data.users);

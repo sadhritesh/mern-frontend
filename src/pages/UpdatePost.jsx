@@ -22,7 +22,7 @@ export default function UpdatePost() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await fetch(`${process.env.API_BASE_URL}/api/v1/post/getposts?postId=${postId}`);
+        const res = await fetch(`${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/post/getposts?postId=${postId}`);
         const result = await res.json();
 
         if (!result.success) {
@@ -56,7 +56,7 @@ export default function UpdatePost() {
 
     try {
       const res = await fetch(
-        `${process.env.API_BASE_URL}/api/v1/post/update-post/${postId}/${currentUser._id}`,
+        `${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/post/update-post/${postId}/${currentUser._id}`,
         {
           method: "PUT",
           body: data,
@@ -94,7 +94,7 @@ export default function UpdatePost() {
 
     try {
       const res = await fetch(
-        `${process.env.API_BASE_URL}/api/v1/post/update-post-image/${postId}/${currentUser._id}`,
+        `${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/post/update-post-image/${postId}/${currentUser._id}`,
         {
           method: "PUT",
           body: data,
