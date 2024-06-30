@@ -42,7 +42,10 @@ export default function CreatePost() {
     try {
       const res = await fetch(`${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/post/create-post`, {
         method: "POST",
-        body : data
+        body : data,
+        headers: {
+           credentials: 'include'
+        }
       }) 
       const result = await res.json()
 

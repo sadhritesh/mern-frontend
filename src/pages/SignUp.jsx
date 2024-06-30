@@ -61,8 +61,8 @@ export default function SignUp() {
       {/* left-part */}
       <div className='py-[5rem] px-[3rem] flex-1'>
           <div className='font-bold text-4xl'>
-            <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white py-2 px-3'>Sadh's</span>
-            Blog
+            <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white py-2 px-3'>JavaScript</span>
+            Devs
           </div>
           <p className='mt-[1rem]'>
           This is a demo project. You can sign up with your email and password or with Google.
